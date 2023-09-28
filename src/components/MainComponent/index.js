@@ -1,5 +1,6 @@
 import React from "react";
-import NoticationAlert from "../WLM/NoticationAlert";
+import ApexChart from "../WLM/ApexChart";
+import OutputvsEarthing from "../WLM/OutputvsEarthing";
 
 function MainComponent() {
   return (
@@ -7,7 +8,10 @@ function MainComponent() {
       <div className="w-full sm:w-4/6 h-4/6 bg-gray-100 flex justify-center items-center">
         {/* write your code for the component inside this div  */}
         <div>
-          <NoticationAlert/>
+          {/* heading */}
+          <div className="font-bold text-purple-900 pl-10">Output vs earthing</div>
+          {/* main graph */}
+          <OutputvsEarthing/>
         </div>
       </div>
     </div>
