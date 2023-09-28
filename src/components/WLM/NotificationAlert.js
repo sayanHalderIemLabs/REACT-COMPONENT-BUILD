@@ -1,7 +1,8 @@
-import React from "react";
+import {React,useEffect} from "react";
 import { AiFillWarning } from "react-icons/ai";
 
-function NoticationAlert({ alertType }) {
+function NoticationAlert({alertType}) {
+  
   const alert1 = (
     <div className="bg-red-200 h-24 w-fit rounded-xl flex items-center justify-center px-5">
       <div>
@@ -52,7 +53,7 @@ function NoticationAlert({ alertType }) {
         Notification Alert
       </div>
       {
-        alert1
+        alert3
       }
     </div>
   );

@@ -1,16 +1,13 @@
 import React from "react";
 import NoticationAlert from "../WLM/NotificationAlert";
 
-function MainComponent(props) {
- 
+function MainComponent() {
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="w-full sm:w-4/6 h-4/6 bg-gray-100 flex justify-center items-center">
         {/* write your code for the component inside this div  */}
         <div>
-          <NoticationAlert
-            alertType="yellow"
-          />
+          <NoticationAlert alertType="full" />
         </div>
       </div>
     </div>
