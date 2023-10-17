@@ -3,7 +3,29 @@ import ApexChart from "../WLM/ApexChart";
 import MagneticField from "../WLM/MagneticField";
 import OutputvsEarthing from "../WLM/OutputvsEarthing";
 import Ultrasonic from "../WLM/Ultrasonic";
+import TableComponent from "../WLM/table";
 
+const data = [
+  {
+    id: 1,
+    name: 'John Doe',
+    age: 30,
+    city: 'New York',
+  },
+  {
+    id: 2,
+    name: 'Jane Smith',
+    age: 25,
+    city: 'Los Angeles',
+  },
+  {
+    id: 3,
+    name: 'Bob Johnson',
+    age: 40,
+    city: 'Chicago',
+  },
+  // Add more data objects as needed
+];
 function MainComponent() {
   return (
     <div className="flex justify-center items-center h-screen">
@@ -13,7 +35,7 @@ function MainComponent() {
           {/* heading */}
           {/* <div className="font-bold text-purple-900 pl-10">Output vs earthing</div> */}
           {/* main graph */}
-          <Ultrasonic/>
+          <TableComponent data={data} />
         </div>
       </div>
     </div>
