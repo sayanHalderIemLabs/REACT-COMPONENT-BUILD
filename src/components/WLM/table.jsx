@@ -1,29 +1,46 @@
 import React from 'react';
+import './style.css';
 
-const TableComponent = ({ data }) => {
-  // Assuming `data` is an array of objects with the same structure
-  const columns = Object?.keys(data[0]);
-  console.log("hiii");
+import PropTypes from 'prop-types';
+
+function TableComponent({ tableData }) {
   return (
-    <table style={{ border: '1px solid #cccccc' }}>
-      <thead>
-        <tr>
-          {columns?.map((column) => (
-            <th key={column} style={{ color: 'blue', border: '1px solid #cccccc', align: 'left'}}>{column}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {data?.map((row, index) => (
-          <tr key={index} style={{border: '1px solid #cccccc'}}>
-            {columns?.map((column) => (
-              <td key={column} style={{border: '1px solid #cccccc'}}>{row[column]}</td>
-            ))}
+    <div className='rounded-lg border shadow-2xl w-full'>
+      <table className='border-separate'>
+        <thead>
+          <tr>
+            <th className='whitespace-pre px-3'>Frequency (Hz)</th>
+            <th className='whitespace-pre px-3'>Radial</th>
+            <th className='whitespace-pre px-3'>Tangential</th>
+            <th className='whitespace-pre px-3'>Axial</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {tableData?.map((data, index) => {
+            return (
+              <tr key={index}>
+                <td className='border px-3'>{data.frequency}</td>
+                <td className='border px-3'>{data.radial}</td>
+                <td className='border px-3'>{data.tangential}</td>
+                <td className='border px-3'>{data.axial}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
+}
+
+TableComponent.propTypes = {
+  tableData: PropTypes.arrayOf(
+    PropTypes.shape({
+      frequency: PropTypes.number.isRequired,
+      radial: PropTypes.number.isRequired,
+      tangential: PropTypes.number.isRequired,
+      axial: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default TableComponent;

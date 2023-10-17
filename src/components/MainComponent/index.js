@@ -7,8 +7,8 @@ import TableComponent from "../WLM/table";
 
 const data = [
   {
-    id: 1,
-    name: 'John Doe',
+    Frequency: 2,
+    radial: 'John Doe',
     age: 30,
     city: 'New York',
   },
