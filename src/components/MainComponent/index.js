@@ -4,25 +4,26 @@ import MagneticField from "../WLM/MagneticField";
 import OutputvsEarthing from "../WLM/OutputvsEarthing";
 import Ultrasonic from "../WLM/Ultrasonic";
 import TableComponent from "../WLM/table";
+import Report from "../Pages/report";
 
 const data = [
   {
     Frequency: 2,
-    radial: 'John Doe',
+    radial: "John Doe",
     age: 30,
-    city: 'New York',
+    city: "New York",
   },
   {
     id: 2,
-    name: 'Jane Smith',
+    name: "Jane Smith",
     age: 25,
-    city: 'Los Angeles',
+    city: "Los Angeles",
   },
   {
     id: 3,
-    name: 'Bob Johnson',
+    name: "Bob Johnson",
     age: 40,
-    city: 'Chicago',
+    city: "Chicago",
   },
   // Add more data objects as needed
 ];
@@ -35,7 +36,8 @@ function MainComponent() {
           {/* heading */}
           {/* <div className="font-bold text-purple-900 pl-10">Output vs earthing</div> */}
           {/* main graph */}
-          <TableComponent data={data} />
+          {/* <Ultrasonic/> */}
+          <Report />
         </div>
       </div>
     </div>
