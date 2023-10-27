@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 
 const Report = () => {
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
   return (
-    <div className="border-2 border-black justify-items-center pl-80 pr-80">
+    <div
+      className="border-2 border-black justify-items-center pl-80 pr-80"
+      ref={componentRef}
+    >
       <nav className="bg-blue-100 mt-8 text-2xl font-semibold p-2">
         Machine Summary(last 24 Hrs):
       </nav>
@@ -162,6 +170,7 @@ const Report = () => {
       <div>
         <table></table>
       </div>
+      <button onClick={handlePrint}>print</button>
     </div>
   );
 };
